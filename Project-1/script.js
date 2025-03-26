@@ -1,244 +1,353 @@
-// id :- list-3 
-const parentElement = document.getElementById('list-3');
-
-function funList3Add(){
-    const listItems = ['Faculty','Student','Parent'];
-    const newList = document.createElement('ul');
-
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
-    });
-
-    const container = document.querySelector('#display-1');
-    container.appendChild(newList);    
-}
-function funList3Remove() {
-    const container = document.querySelector('#display-1');
-    container.innerHTML = '';
-}
-
-// id :- list-4 
-const mainElement = document.getElementById('list-4');
-
-function funList4Add(){
-    const listItems = ['Online Payment','AICTE','JIM Library','MDP','FDP'];
-    const newList = document.createElement('ul');
-
-    listItems.forEach(item=>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
-    });
-
-    const container = document.querySelector('#display-2');
-    container.appendChild(newList);
-}
-function funList4Remove() {
-    const container = document.querySelector('#display-2');
-    container.innerHTML = '';
-}
-
-// id :- display-one 
-const parentDisplay = document.getElementById('list-one');
-
-function listOneAdd(){
-    const listItems = ['JESUITS','OUR COLLEGE','JIM','DIRECTOR MESSAGE','BOARD OF MANAGEMENT','BOARD OF STUDIES','GOLD CRAFTERS'];
-    const newList = document.createElement('ul');
-
-    listItems.forEach(item=>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
-
-    });
-    const container = document.querySelector('#display-one');
-    container.appendChild(newList);
-
-
-}
-function listOneRemove() {
-    const container = document.querySelector('#display-one');
-    container.innerHTML = '';
-}
-
-// id :- display-two
-const parentEllement = document.getElementById('list-two');
-
-function listTwoAdd(){
-    const newList = document.createElement('ul');
-    const listItems = ['MBA','SYLLABUS','COURSE ALLOTMENT','PH.D. / RESEARCH','OVERVIEW','RESEARCH ADVISORS','GOVERNMENT FUNDED PROJECTS/SEMINARS']
-
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
-    });
+// header 
+function toggleSearch() {
+    const searchBar = document.querySelector('.searchbar');
     
-    const container = document.getElementById('display-two');
-    container.appendChild(newList);
+    if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+        searchBar.style.display = 'inline';
+    } else {
+        searchBar.style.display = 'none';
+    }
 }
-function listTwoRemove() {
-    const container = document.querySelector('#display-two');
-    container.innerHTML = '';
+
+function funMenu(){
+    const navigation = document.querySelector('.navigation');
+
+    if (navigation.style.display === 'none' || navigation.style.display === '') {
+        navigation.style.display = 'inline';
+    } else {
+        navigation.style.display = 'none';
+    }
 }
 
-// id :- list-four 
-const parentEleement = document.getElementById('list-four');
+// all-colors 
 
-function listFourAdd(){
-    const newList = document.createElement('ul');
-    const listItems = ['Faculty','Staff','Guest Speakers','Visiting Faculty'];
+function funSetting(){
+    const colorss = document.querySelector('.all-colors');
 
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
+    if(colorss.style.display === 'none' || colorss.style.display === ''){
+        colorss.style.display = 'block';
+    } 
+    else{
+        colorss.style.display = 'none';
+    }
+}
+
+function funColors(color){
+    const header = document.querySelector('#header');
+    const home = document.querySelector('.home');
+    const aboutPage = document.querySelector('.about-page a');
+    const cols = document.querySelectorAll('.character-center .characters');
+    const allI = document.querySelectorAll('.character-center .characters i');
+    const allA = document.querySelectorAll('.character-center .characters a');
+    const breakerLine = document.querySelectorAll('.breakerline');
+    const breaker = document.querySelectorAll('.breaker');
+    const company = document.querySelector('.company');
+    const lists = document.querySelectorAll('.compliment li a');
+    const btnRight = document.querySelectorAll('.btn-right');
+    const cartBtn = document.querySelector('.cart-btn');
+    const recentPostsInfo = document.querySelectorAll('.recent-posts-info a');
+    const twitter = document.querySelectorAll('.twitter-info .logo a');
+
+    header.style.backgroundColor = color;
+    home.style.backgroundColor = color;
+    aboutPage.style.backgroundColor = color;
+    cartBtn.style.backgroundColor = color;
+    cartBtn.addEventListener('mouseenter',()=>{
+        cartBtn.style.backgroundColor = '#5E5E5E';
     });
-    const container = document.getElementById('display-four');
-    container.appendChild(newList);
-}
-function listFourRemove() {
-    const container = document.querySelector('#display-four');
-    container.innerHTML = '';
-}
-
-// id :- list-five 
-const parentElemment = document.getElementById('list-five');
-
-function listFiveAdd(){
-    const newList = document.createElement('ul');
-    const listItems = ['The Campus','Computer Lab','The Library','Auditorium','Board Room'];
-
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
+    cartBtn.addEventListener('mouseleave',()=>{
+        cartBtn.style.backgroundColor = color;
     });
-    const container = document.getElementById('display-five');
-    container.appendChild(newList);
-}
-function listFiveRemove() {
-    const container = document.querySelector('#display-five');
-    container.innerHTML = '';
-}
 
-// id :- list-six 
-const parentElemeent = document.getElementById('list-six');
+    breakerLine.forEach(ele=>{
+        ele.style.color = color;
+    })
+    breaker.forEach(ele=>{
+        ele.style.backgroundColor = color;
+    })
+    company.style.color = color;
 
-function listSixAdd(){
-    const newList = document.createElement('ul');
-    const listItems = ['Campus Ministry','SAC','Club Activities','Co-Curricular Activites','Shepherd','JIMNESIA','JIM Spire'];
 
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
+    cols.forEach(col => {
+        col.style.borderColor = color;
+        col.style.boxShadow = 'none';
+
+        col.addEventListener('mouseenter', () => {
+            const lines = col.querySelectorAll('.line');
+            const iS = col.querySelectorAll('i');
+            lines.forEach(line => {
+                line.style.backgroundColor = color;
+            });
+            iS.forEach(i => {
+                i.style.backgroundColor = color;
+                i.style.color = 'white';
+                });
+        });
+    
+        col.addEventListener('mouseleave', () => {
+            const lines = col.querySelectorAll('.line');
+            const iS = col.querySelectorAll('i');
+
+            lines.forEach(line => {
+                line.style.backgroundColor = 'white';
+            });
+            iS.forEach(i => {
+                i.style.backgroundColor = 'white';
+                i.style.color = color;
+            });
+        });
     });
-    const container = document.getElementById('display-six');
-    container.appendChild(newList);
-}
-function listSixRemove() {
-    const container = document.querySelector('#display-six');
-    container.innerHTML = '';
-}
 
-// id :- list-seven 
-const parentElemennt = document.getElementById('list-six');
 
-function listSevenAdd(){
-    const newList = document.createElement('ul');
-    const listItems = ['Director Communique','Placement Statistics','Our Recruiters','Placement Brochure','Placed Students'];
-
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
+    allI.forEach(i => {
+        i.style.color = color;
+        i.style.borderColor = color;
+        i.addEventListener('mouseenter',()=>{
+            i.style.backgroundColor = color;
+            i.style.color = 'white';
+        });
+        i.addEventListener('mouseleave',()=>{
+            i.style.backgroundColor = 'white';
+            i.style.color = color;
+        });
     });
-    const container = document.getElementById('display-seven');
-    container.appendChild(newList);
-}
-function listSevenRemove() {
-    const container = document.querySelector('#display-seven');
-    container.innerHTML = '';
-}
 
-// id :- list-eight 
-const parentElementt = document.getElementById('list-eight');
-
-function listEightAdd(){
-    const newList = document.createElement('ul');
-    const listItems = ['Photo Gallery','Video Gallery'];
-
-    listItems.forEach(item =>{
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        newList.appendChild(listItem);
+    allA.forEach(a => {
+        a.style.color = color;
     });
-    const container = document.getElementById('display-eight');
-    container.appendChild(newList);
+
+    const btnGroups = document.querySelectorAll('.btn-group a');
+    btnGroups.forEach(btnGroup => {
+        btnGroup.addEventListener('mouseenter', () => {
+            btnGroup.style.backgroundColor = color;
+        });
+    });
+
+    btnGroups.forEach(btnGroup => {
+        btnGroup.addEventListener('mouseleave', () => {
+        btnGroup.style.backgroundColor = '';
+        home.style.backgroundColor = color;
+        });
+    });
+
+    lists.forEach(list=>{
+        list.addEventListener('mouseenter',()=>{
+            list.style.color = color;
+        })
+    })
+    lists.forEach(list=>{
+        list.addEventListener('mouseleave',()=>{
+            list.style.color = '#5E5E5E';
+        })
+    })
+
+    btnRight.forEach(btn=>{
+        btn.style.backgroundColor = color;
+        btn.addEventListener('mouseenter',()=>{
+            btn.style.backgroundColor = '#555555';
+        });
+        btn.addEventListener('mouseleave',()=>{
+            btn.style.backgroundColor = color;
+        })
+    })
+
+    recentPostsInfo.forEach(aTag=>{
+        aTag.addEventListener('mouseenter',()=>{
+            aTag.style.color = color;
+        })
+    })
+    recentPostsInfo.forEach(aTag=>{
+        aTag.addEventListener('mouseleave',()=>{
+            aTag.style.color = '#ffffff';
+        })
+    })
+
+    twitter.forEach(aTag=>{
+        aTag.addEventListener('mouseenter',()=>{
+            aTag.style.color = color;
+        })
+    })
+    twitter.forEach(aTag=>{
+        aTag.addEventListener('mouseleave',()=>{
+            aTag.style.color = '#ffffff';
+        })
+    })
+
 }
-function listEightRemove() {
-    const container = document.querySelector('#display-eight');
-    container.innerHTML = '';
+
+// character 
+
+const images = document.querySelectorAll('.character-bottom img');
+const leftTurn = document.querySelector('#left-turn');
+const rightTurn = document.querySelector('#right-turn');
+
+let currentIndex = 0;
+
+function showImages(start, end) {
+    images.forEach((img, index) => {
+        if (index >= start && index <= end) {
+            img.style.display = 'block';
+        } else {
+            img.style.display = 'none';
+        }
+    });
 }
 
-// radio-btn
-const titleElement = document.getElementById("title");
-const headElement = document.getElementById("heading");
-const peraElement = document.getElementById("pera");
-function funRadio1(){
-    titleElement.textContent = "GREEN CAMPUS";
-    headElement.textContent = "JIM is a sustainable green campus with a more dynamic ambience that energizes the students with positive vibes.";
-    peraElement.textContent = "JIM is a sustainable green campus with a more dynamic ambience that energizes the students with positive vibes.";
+function funRightTurn() {
+    if (window.innerWidth <= 767) {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            rightTurn.style.backgroundColor = '#555555';
+            leftTurn.style.backgroundColor = '#BDC3C7';
+            if(currentIndex === images.length - 1){
+                rightTurn.style.backgroundColor = '#F2F2F2';
+                rightTurn.style.color = '#7D6873';
+            }
+        }
+        showImages(currentIndex, currentIndex);
+    } 
+    else if (window.innerWidth > 767 && window.innerWidth <= 991) {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            rightTurn.style.backgroundColor = '#F2F2F2';
+            rightTurn.style.color = '#7D6873';
+            leftTurn.style.backgroundColor = '#BDC3C7';
+        }
+        showImages(3, 5);
+    } 
+    else if (window.innerWidth > 991 && window.innerWidth <= 1199) {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            rightTurn.style.backgroundColor = '#F2F2F2';
+            rightTurn.style.color = '#7D6873';
+            leftTurn.style.backgroundColor = '#BDC3C7';
+        }
+        showImages(4, 8);
+    } 
+    else {
+        showImages(3, 7); 
+        rightTurn.style.backgroundColor = '#F2F2F2';
+        rightTurn.style.color = '#7D6873';
+        rightTurn.style.cursor = 'default';
+        leftTurn.style.backgroundColor = '#BDC3C7';
+        leftTurn.style.color = '#F2F1EA';
+        leftTurn.addEventListener('mouseenter', () =>{
+            leftTurn.style.cursor = 'pointer';
+            leftTurn.style.backgroundColor = '#555555';
+        });
+    
+    }
+
 }
-function funRadio2(){
-    titleElement.textContent = "ECOSYSTEM OF LEARNING";
-    headElement.textContent = "Student Advisory Council";
-    peraElement.textContent = "JIM in a sylvan atmosphere";
+
+function funLeftTurn() {
+    if (window.innerWidth <= 767) {
+        if (currentIndex > 0) {
+            currentIndex--;
+            leftTurn.style.backgroundColor = '#555555';
+            rightTurn.style.backgroundColor = '#BDC3C7';
+            if(currentIndex === 0){
+                leftTurn.style.backgroundColor = '#F2F2F2';
+                leftTurn.style.color = '#7D6873';
+            }
+        }
+        showImages(currentIndex, currentIndex);
+    }
+    else if (window.innerWidth > 767 && window.innerWidth <= 991) {
+        if (currentIndex > 0) {
+            currentIndex--;
+            leftTurn.style.backgroundColor = '#F2F2F2';
+            rightTurn.style.backgroundColor = '#BDC3C7';
+        }
+        showImages(0, 2);
+    }
+    else if (window.innerWidth > 991 && window.innerWidth <= 1199) {
+        if (currentIndex > 0) {
+            currentIndex--;
+            leftTurn.style.backgroundColor = '#F2F2F2';
+            rightTurn.style.backgroundColor = '#BDC3C7';
+        }
+        showImages(0, 3);
+    }
+     else {
+        showImages(0, 4);
+        leftTurn.style.backgroundColor = '#F2F2F2';
+        leftTurn.style.color = '#7D6873';
+        leftTurn.style.cursor = 'default';
+        rightTurn.style.backgroundColor = '#BDC3C7';
+        rightTurn.style.color = '#F2F1EA';
+        rightTurn.addEventListener('mouseenter', () =>{
+             rightTurn.style.cursor = 'pointer';
+             rightTurn.style.backgroundColor = '#555555';
+        });
+    
+    }
+
 }
-function funRadio3(){
-    titleElement.textContent = "STUDENT ADVISORY COUNCIL";
-    headElement.textContent = "Student Advisory Council";
-    peraElement.textContent = "Building relationships within teams, defining identities and achieving tasks effectively.";
-}
-function funRadio4(){
-    titleElement.textContent = "MENTORING";
-    headElement.textContent = "Mentoring is an important activity in the learning process of JIM.";
-    peraElement.textContent = "Mentoring is an important activity in the learning process of JIM.";
-}
-function funRadio5(){
-    titleElement.textContent = "ESPRIT DE CORPS";
-    headElement.textContent = "Teamwork and Cooperation are consistently practiced by the JIM students.";
-    peraElement.textContent = "Teamwork and Cooperation are consistently practiced by the JIM students.";
-}
-function funRadio6(){
-    titleElement.textContent = "THE INSTALLATION OF THE NEW STATUE OF ST. IGNATIUS OF LOYOLA";
-    headElement.textContent = "Blessed by Rev. Dr.M.Pavulraj SJ,Rector, St.Joseph's Institutions";
-    peraElement.textContent = "Blessed by Rev. Dr.M.Pavulraj SJ,Rector, St.Joseph's Institutions";
+
+if (window.innerWidth <= 767) {
+    showImages(0, 0); 
+} 
+else if (window.innerWidth > 767 && window.innerWidth <= 991) {
+    showImages(0, 2); 
+} 
+else if (window.innerWidth > 991 && window.innerWidth <= 1199) {
+    showImages(0, 3); 
+} 
+else {
+    showImages(0, 4);
 }
 
+rightTurn.addEventListener('click', funRightTurn);
+leftTurn.addEventListener('click', funLeftTurn);
 
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 767) {
+        showImages(currentIndex, currentIndex); 
+    }
+    else if (window.innerWidth > 767 && window.innerWidth <= 991) {
+        showImages(currentIndex - 1, currentIndex + 1); 
+    }
+    else if (window.innerWidth > 991 && window.innerWidth <= 1199) {
+        showImages(0,3); 
+    }
+     else {
+        showImages(0, 4); 
+    }
+});
 
+// members
+const dot1 = document.querySelector('.dot1');
+const dot2 = document.querySelector('.dot2');
+const dot3 = document.querySelector('.dot3');
+const peraContent = document.querySelector('.pera-content');
+const memberImage = document.querySelector('.member img');
+const company = document.querySelector('.company');
 
+dot1.addEventListener('click',()=>{
+    peraContent.innerHTML = "Donec convallis, metus nec tempus aliquet, nunc metus adipiscing leo, a lobortis nisi dui ut odio. Nullam ultrices, eros accumsan vulputate faucibus, turpis tortor dictum.";
+    memberImage.src = "./images/1.jpg";
+    company.innerHTML = "Company Inc.";
+    dot1.style.backgroundColor = "white";
+    dot2.style.backgroundColor = "transparent";
+    dot3.style.backgroundColor = "transparent";
+})
 
+dot2.addEventListener('click',()=>{
+    peraContent.innerHTML = "Metus aliquet tincidunt metus, sit amet mattis lectus sodales ac. Suspendisse rhoncus dictum eros, ut egestas eros luctus eget. Nam nibh sem, mattis et feugiat ut, porttitor nec risus.";
+    memberImage.src = "./images/2.jpg";
+    company.innerHTML = "Leopard";
+    dot1.style.backgroundColor = "transparent";
+    dot2.style.backgroundColor = "white";
+    dot3.style.backgroundColor = "transparent";
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+dot3.addEventListener('click',()=>{
+    peraContent.innerHTML = "Nunc aliquet tincidunt metus, sit amet mattis lectus sodales ac. Suspendisse rhoncus dictum eros, ut egestas eros luctus eget. Nam nibh sem, mattis et feugiat ut, porttitor nec risus.";
+    memberImage.src = "./images/3.jpg";
+    dot1.style.backgroundColor = "transparent";
+    dot2.style.backgroundColor = "transparent";
+    dot3.style.backgroundColor = "white";
+})
 
 
